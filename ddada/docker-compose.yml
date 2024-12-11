@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  next-app:
+    image: redstone99/ddada-fe:0.1.0 # 로컬에서 생성한 이미지 이름
+    container_name: next-app
+    ports:
+      - '3000:3000' # 컨테이너 포트를 호스트에 매핑
+    networks:
+      - ddada-network # 필요한 네트워크에 연결
+
+networks:
+  ddada-network:
+    external: true
